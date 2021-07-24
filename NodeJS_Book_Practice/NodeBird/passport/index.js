@@ -18,7 +18,7 @@ module.exports = () => {
                 model: User,
                 attributes: ['id', 'nick'],
                 as: 'Followings',
-            }]
+            },]
         })// 세션에 저장했던 아이디를 받아 db에서 사용자 정보 조회
             .then(user => done(null, user))
             .catch(err => done(err));

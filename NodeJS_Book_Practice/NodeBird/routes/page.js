@@ -23,10 +23,10 @@ router.get('/join', isNotLoggedIn, (req, res) => {
 router.get('/', async (req, res, next) => {
     try {
         const posts = await Post.findAll({
-            include: {
+            include: { // 작성자
                 model: User,
                 attributes: ['id', 'nick'],
-            },
+            }, 
             order: [['createdAt', 'DESC']],
         });
         res.render('main', {
